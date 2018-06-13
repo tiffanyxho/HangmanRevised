@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',main,false);
 
 var x_pos = 0, y_pos = 0;
 var canvas = document.getElementById('canvas');
-var worker;
+//var worker;
 
 function main(){
     var hit_right = false, hit_bottom = false;
@@ -53,18 +53,18 @@ function main(){
 }
 
 // TODO: Web Worker for a timer - does not work, gives an error in dev. tools
-/*function countdown(){
+window.onload = function countdown(){
     if (typeof(Worker) !== "undefined"){
-        if(worker === "undefined") {
-            worker = new Worker("hangman_revised_countdown.js");
-        }
+        
+        var worker = new Worker("hangman_revised_countdown.js");
+        
         worker.onmessage = function(event){
-            document.getElementById("countdown_text").innerHTML = event.data;
+            document.getElementById("countdown").innerHTML = event.data;
         };
     }else{
-        document.getElementById("countdown_text").innerHTML = "not supported";
+        document.getElementById("countdown").innerHTML = "not supported";
     }
-}*/
+}
 
 
 function mouseDown(event){
