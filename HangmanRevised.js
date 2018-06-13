@@ -43,8 +43,9 @@ function countdown(){
     }
 }
 
+/*
 function mouseDown(event){
     if (event.button === 0){
         x_pos += 10;
     }
-}
+}*/
