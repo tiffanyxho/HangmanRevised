@@ -1,9 +1,14 @@
-var count = 0;
+var count = 30;
 
 function timedCount() {
-    count += 1;
-    postMessage(count);
-    setTimeout("timedCount()",30);
+    if (count >= -1){
+        if (count === -1){
+            count = 30;
+        }
+        postMessage(count);
+        count -= 1;
+        setTimeout("timedCount()",1000);
+    }
 }
 
 timedCount();
