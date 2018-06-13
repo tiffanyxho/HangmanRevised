@@ -50,7 +50,9 @@ function main(){
     document.addEventListener('mousedown',  mouseDown);
 }
 
-// TODO: Web Worker for a timer - does not work, gives an error in dev. tools
+// TODO: Web Worker for a timer - does not work, gives an error in Chrome dev. tools
+// Useful links: https://stackoverflow.com/questions/21408510/chrome-cant-load-web-worker?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+// https://stackoverflow.com/questions/18586921/how-to-launch-html-using-chrome-at-allow-file-access-from-files-mode
 window.onload = function countdown(){
     if (typeof(Worker) !== "undefined"){
         var worker = new Worker("hangman_revised_countdown.js"); 
