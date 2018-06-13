@@ -3,3 +3,8 @@
     height: 100%;
     border: 1px solid red;
 }
+
+#countdown_text{
+    font-size: 32px;
+    text-align: center;
+}
