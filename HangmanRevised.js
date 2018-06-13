@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',main,false);
-document.addEventListener('DOMContentLoaded',countdown,false);
+//document.addEventListener('DOMContentLoaded',countdown,false);
 
 var x_pos = 0, y_pos = 0;
 var canvas = document.getElementById('canvas');
@@ -30,7 +30,8 @@ function main(){
     document.addEventListener('mousedown',  mouseDown);
 }
 
-function countdown(){
+// TODO: Web Worker for a timer - does not work, gives an error in dev. tools
+/*function countdown(){
     if (typeof(Worker) !== "undefined"){
         if(worker === "undefined") {
             worker = new Worker("hangman_revised_countdown.js");
@@ -41,11 +42,11 @@ function countdown(){
     }else{
         document.getElementById("countdown_text").innerHTML = "not supported";
     }
-}
+}*/
 
-/*
+
 function mouseDown(event){
     if (event.button === 0){
         x_pos += 10;
     }
-}*/
+}
