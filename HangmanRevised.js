@@ -41,6 +41,11 @@ function drawNewCount(){
     window.requestAnimationFrame(function loop(){
         clearCount();
         context.font = "24px Times New Roman";
-        context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 12, 21.5);
+        
+        if (parseInt(document.getElementById("countdown").innerHTML) >= 10) {
+            context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 12, 21.5);
+        }else{
+            context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 6, 21.5);
+        }
     });
 }
