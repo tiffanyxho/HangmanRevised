@@ -25,12 +25,13 @@ function main(){
 // ALTERNATIVE TO CLEARING COUNT TEXT: https://stackoverflow.com/questions/3008635/html5-canvas-element-multiple-layers
 // Clears the previous count to display new count by recoloring background, also redraws the background semicircle
 function clearCount(){
-    // Orange background draw
+    // Fills in background color
     context.fillStyle = background_color;
     context.fillRect(0,0,canvas.width,canvas.height);
 
     // Black semicircle drawn
     context.beginPath();
+    context.fillStyle = "black";
     context.arc(canvas.width/2,0,10,0,2*Math.PI);
 }
 
@@ -38,6 +39,7 @@ function clearCount(){
 function drawNewCount(){
     window.requestAnimationFrame(function loop(){
         clearCount();
-        context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
+        context.font = "24px Times New Roman";
+        context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 12, 24);
     });
 }
