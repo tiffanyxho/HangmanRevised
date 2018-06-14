@@ -1,5 +1,6 @@
 // Web Worker: Count down from 30 to 0, repeats, starts at 30 again
 // Used in HangmanRevised.js file
+// Note: document doesn't exist in web workers
 var count = 30;
 
 function timedCount() {
