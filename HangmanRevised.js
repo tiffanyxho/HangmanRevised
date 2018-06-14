@@ -14,10 +14,7 @@ function main(){
             var worker = new Worker("hangman_revised_countdown.js"); 
             worker.onmessage = function(event){
                 document.getElementById("countdown").innerHTML = event.data;
-                window.requestAnimationFrame(function loop(){
-                    clearCount();
-                    context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
-                });
+                drawNewCount();
             };
         }else{
             document.getElementById("countdown").innerHTML = "not supported";
@@ -35,5 +32,12 @@ function clearCount(){
     // Black semicircle drawn
     context.beginPath();
     context.arc(canvas.width/2,0,10,0,2*Math.PI);
-    context.stroke();
+}
+
+// Clears previous count and draws new count, starts at 30, ends at 0, loops back to 30
+function drawNewCount(){
+    window.requestAnimationFrame(function loop(){
+        clearCount();
+        context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
+    });
 }
