@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded',main,false);
 
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
+var background_color = "orange";
 
 function main(){
     // TODO: Web Worker for a timer - does not work, gives an error in Chrome dev. tools
@@ -13,7 +14,11 @@ function main(){
             var worker = new Worker("hangman_revised_countdown.js"); 
             worker.onmessage = function(event){
                 document.getElementById("countdown").innerHTML = event.data;
-                context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
+                window.requestAnimationFrame(function loop(){
+                    context.fillStyle = background_color;
+                    context.fillRect(0,0,canvas.width,canvas.height);
+                    context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
+                });
             };
         }else{
             document.getElementById("countdown").innerHTML = "not supported";
@@ -22,7 +27,7 @@ function main(){
 
     // Orange background draw
     
-    context.fillStyle = "orange";
+    context.fillStyle = background_color;
     context.fillRect(0,0,canvas.width,canvas.height);
 
     // Black semicircle drawn
