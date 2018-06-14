@@ -32,14 +32,15 @@ function clearCount(){
     // Black semicircle drawn
     context.beginPath();
     context.fillStyle = "black";
-    context.arc(canvas.width/2,0,10,0,2*Math.PI);
+    context.arc(canvas.width/2,0,30,0,2*Math.PI);
+    context.stroke();
 }
 
-// Clears previous count and draws new count, starts at 30, ends at 0, loops back to 30
+// Clears previous count using clearCount() and draws new count, starts at 30 & decrements to 0, loops back to 30
 function drawNewCount(){
     window.requestAnimationFrame(function loop(){
         clearCount();
         context.font = "24px Times New Roman";
-        context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 12, 24);
+        context.strokeText(document.getElementById("countdown").innerHTML, canvas.width/2 - 12, 21.5);
     });
 }
