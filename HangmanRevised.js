@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded',main,false);
 
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-var background_color = "orange";
+var background_color = "#d9b3ff";
 
 function main(){
     // TODO: Web Worker for a timer - does not work, gives an error in Chrome dev. tools
