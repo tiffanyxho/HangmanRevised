@@ -15,8 +15,7 @@ function main(){
             worker.onmessage = function(event){
                 document.getElementById("countdown").innerHTML = event.data;
                 window.requestAnimationFrame(function loop(){
-                    context.fillStyle = background_color;
-                    context.fillRect(0,0,canvas.width,canvas.height);
+                    clearCount();
                     context.strokeText(document.getElementById("countdown").innerHTML, 10, 100);
                 });
             };
@@ -24,9 +23,11 @@ function main(){
             document.getElementById("countdown").innerHTML = "not supported";
         }
     }
+}
 
+// Clears the previous count to display new count by recoloring background, also redraws the background semicircle
+function clearCount(){
     // Orange background draw
-    
     context.fillStyle = background_color;
     context.fillRect(0,0,canvas.width,canvas.height);
 
