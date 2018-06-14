@@ -18,14 +18,17 @@ function main(){
         }
     }
 
+    // Orange background draw
     var context = canvas.getContext('2d');
     context.fillStyle = "orange";
     context.fillRect(0,0,canvas.width,canvas.height);
 
+    // Black semicircle drawn
     context.beginPath();
     context.arc(canvas.width/2,0,10,0,2*Math.PI);
     context.stroke();
 
     context.font = "20px Georgia";
-    context.strokeText(document.getElementById("countdown_text").textContent, 10, 100);
+    //context.strokeText(document.getElementById("countdown_text").textContent + document.getElementById("countdown").textContent, 10, 100);
+    context.strokeText(count, 10, 100);
 }
