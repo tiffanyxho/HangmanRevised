@@ -25,6 +25,7 @@ function main(){
     }
 }
 
+// ALTERNATIVE TO CLEARING COUNT TEXT: https://stackoverflow.com/questions/3008635/html5-canvas-element-multiple-layers
 // Clears the previous count to display new count by recoloring background, also redraws the background semicircle
 function clearCount(){
     // Orange background draw
