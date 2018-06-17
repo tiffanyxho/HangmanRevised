@@ -10,7 +10,7 @@ function timedCount() {
         }
         postMessage(count);
         count -= 1;
-        setTimeout("timedCount()",1000);
+        setTimeout("timedCount()",500);
     }
 }
 
