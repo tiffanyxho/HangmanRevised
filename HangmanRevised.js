@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded',main,false);
 
+// create necessary variables
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var background_color = "#d9b3ff";
+// initialize empty wordList
+var wordsList = [];
+
+// set canvas's width and height to window's width and height
 context.canvas.width  = window.innerWidth;
 context.canvas.height = window.innerHeight;
 
@@ -51,3 +56,13 @@ function drawNewCount(){
         }
     });
 }
+
+// Load the words from the dictionary text file to wordsList
+function init() {
+    var wordsFile = "https://raw.githubusercontent.com/GirlsFirst/SIP-2017/master/Unit2_Applications/dictionary-attack/dictionary.txt?token=ADcVhZjRMd86ZdhPE2jVvIaJdQdzLA6Yks5YvvVSwA%3D%3D";
+    $.get(wordsFile, function(data) {
+      document.getElementById("btnSubmit").disabled = true;
+      wordsList = data.split('\n');
+      document.getElementById("btnSubmit").disabled = false;
+    });
+  }
