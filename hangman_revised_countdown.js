@@ -8,7 +8,7 @@ function timedCount() {
         if (count === -1){
             count = 15;
         }
-        postMessage(count);
+        postMessage(count, "*");
         count -= 1;
         setTimeout("timedCount()",700);
     }
